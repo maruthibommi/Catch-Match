@@ -10,11 +10,11 @@ function Keyboard() {
     <div className='keyboard'>
       
       <div className='line1'>
-      <Key keyval = "e" />
+      <Key keyval = "ENTER" bigKey/>
       {keys.map((key) => {
           return <Key keyval ={key} />
         })}
-        <Key keyval = "e" />
+        <Key keyval = "DELETE" bigKey />
       </div> 
       
     </div>
