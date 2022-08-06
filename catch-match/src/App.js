@@ -18,7 +18,6 @@ function App() {
       <Board />
       <Keyboard />
       </AppContext.Provider>
-
     </div>
   );
 }

@@ -4,7 +4,7 @@
   width: 100vw;
   height: 100vh;
   /* display: flex; */
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 body {
@@ -54,7 +54,7 @@ nav h1 {
 .letter {
   flex: 33%;
   height: 100%;
-  border: 1px solid grey;
+  border: 1px solid rgb(202, 202, 176);
   margin: 5px;
   display: grid;
   place-items: center;
@@ -65,11 +65,11 @@ nav h1 {
 }
 
 #correct {
-  background-color: #528d4e;
+  background-color: #3cc432;
 }
 
 #almost {
-  background-color: #b49f39;
+  background-color: #ffe250;
 }
 
 #error {
