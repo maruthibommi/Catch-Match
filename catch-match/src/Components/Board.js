@@ -1,5 +1,4 @@
-import React , {useState} from 'react'
-import { boardDefault } from './numbers'
+import React from 'react'
 import '../App.css'
 import Letter from './Letter'
 

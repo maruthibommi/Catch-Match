@@ -1,5 +1,4 @@
 import React from 'react'
-import { boardDefault } from './numbers'
 import { useContext } from 'react'
 import { AppContext } from '../App'
 
