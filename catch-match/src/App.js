@@ -25,7 +25,7 @@ function App() {
     setCurrAttempt({...currAttempt, letterPos: currAttempt.letterPos - 1})
   }
   const onEnter = () => {
-    if(currAttempt.letterPos !== 5) return;
+    if(currAttempt.letterPos !== 5 || currAttempt.attempt === 5) return;
     setCurrAttempt({attempt: currAttempt.attempt+1 ,letterPos: 0})
   }
 

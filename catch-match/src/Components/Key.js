@@ -16,10 +16,7 @@ function Key({keyval,bigKey}) {
         else{
           onSelectLetter(keyval);
         }
-
     }
-
-
   return (
 <div className='key' id = {bigKey && "big"} onClick={selectLetter} >{keyval}</div>
   )
