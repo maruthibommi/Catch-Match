@@ -10,6 +10,8 @@ function App() {
   const [board,setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState( { attempt : 0 , letterPos : 0 });
 
+  const correctNumber = "12345";
+
   const onSelectLetter = (keyval) =>{
     if(currAttempt.letterPos > 4 ) return ;
     const newBoard = [...board]
@@ -34,7 +36,14 @@ function App() {
       <nav>
       <h1> Catch Match</h1>
       </nav>
-      <AppContext.Provider value={ {board,setBoard,currAttempt,setCurrAttempt,onSelectLetter,onDelete,onEnter}}>
+      <AppContext.Provider value={ {board
+        ,correctNumber
+        ,currAttempt
+        ,setBoard
+        ,setCurrAttempt
+        ,onSelectLetter
+        ,onDelete
+        ,onEnter}}>
       <div className='game'>
         <Board />
         <Keyboard />
