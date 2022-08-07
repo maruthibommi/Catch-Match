@@ -11,6 +11,8 @@ function App() {
   const [currAttempt, setCurrAttempt] = useState( { attempt : 0 , letterPos : 0 });
 
   const correctNumber = "12345"
+  const sampleNumber = Math.random()
+  console.log(sampleNumber)
 
   const onSelectLetter = (keyval) =>{
     if(currAttempt.letterPos > 4 ) return ;
