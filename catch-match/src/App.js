@@ -10,7 +10,7 @@ function App() {
   const [board,setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState( { attempt : 0 , letterPos : 0 });
 
-  const correctNumber = "12345";
+  const correctNumber = "12345"
 
   const onSelectLetter = (keyval) =>{
     if(currAttempt.letterPos > 4 ) return ;
@@ -28,7 +28,14 @@ function App() {
   }
   const onEnter = () => {
     if(currAttempt.letterPos !== 5 || currAttempt.attempt === 5) return;
+    let currNumber = "";
+    for (let i=0; i< 5  ; i++ ){
+        currNumber+=board[currAttempt.attempt][i]
+    }
     setCurrAttempt({attempt: currAttempt.attempt+1 ,letterPos: 0})
+    if(currNumber === correctNumber){
+      alert("GameOver You win")
+    }
   }
 
   return (

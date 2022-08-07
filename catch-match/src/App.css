@@ -60,12 +60,15 @@ nav h1 {
   place-items: center;
   font-size: 30px;
   font-weight: bolder;
-  color: white;
+  color:rgb(202, 202, 176);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 #correct {
   background-color: #3cc432;
+}
+#none {
+  background-color: #000000;
 }
 
 #almost {
@@ -73,7 +76,7 @@ nav h1 {
 }
 
 #error {
-  background-color: #3a393c;
+  background-color: #9a9a9b;
 }
 
 .keyboard {
