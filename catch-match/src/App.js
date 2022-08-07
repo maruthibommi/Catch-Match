@@ -1,4 +1,5 @@
 import './App.css'
+import React from 'react';
 import Board from './Components/Board';
 import Keyboard from './Components/Keyboard';
 import { createContext ,useState} from 'react';
@@ -10,7 +11,7 @@ function App() {
   const [board,setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState( { attempt : 0 , letterPos : 0 });
 
-  const correctNumber = "12345"
+  const correctNumber = "78654"
   const sampleNumber = Math.random()
   console.log(sampleNumber)
 
