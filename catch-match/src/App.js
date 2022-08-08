@@ -6,14 +6,17 @@ import { createContext ,useState} from 'react';
 import { boardDefault } from './Components/numbers';
 
 export const AppContext = createContext()
-
+const randomNumber =Math.random().toString()
+const correctNumber=randomNumber.slice(2,7)
 function App() {
   const [board,setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState( { attempt : 0 , letterPos : 0 });
 
-  const correctNumber = "78654"
-  const sampleNumber = Math.random()
-  console.log(sampleNumber)
+  // const randomNumber =Math.random().toString()
+  // const sampleNumber=randomNumber.slice(2,7)
+  // const correctNumber ="45678"
+  console.log("correct Number"+correctNumber)
+  // console.log(sampleNumber)
 
   const onSelectLetter = (keyval) =>{
     if(currAttempt.letterPos > 4 ) return ;
@@ -30,7 +33,7 @@ function App() {
     setCurrAttempt({...currAttempt, letterPos: currAttempt.letterPos - 1})
   }
   const onEnter = () => {
-    if(currAttempt.letterPos !== 5 || currAttempt.attempt === 5) return;
+    if(currAttempt.letterPos !== 5 || currAttempt.attempt === 6) return;
     let currNumber = "";
     for (let i=0; i< 5  ; i++ ){
         currNumber+=board[currAttempt.attempt][i]
@@ -39,6 +42,11 @@ function App() {
     if(currNumber === correctNumber){
       alert("GameOver You win")
     }
+    else if (currAttempt.attempt === 5 && currNumber !== correctNumber){
+      alert("Sorry U lost the game :( "+
+      "Coreect Sequence is "+correctNumber)
+    }
+
   }
 
   return (
