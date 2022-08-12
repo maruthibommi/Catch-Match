@@ -12,11 +12,15 @@ function App() {
   const [board,setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState( { attempt : 0 , letterPos : 0 });
 
-  // const randomNumber =Math.random().toString()
-  // const sampleNumber=randomNumber.slice(2,7)
-  // const correctNumber ="45678"
-  console.log("correct Number"+correctNumber)
-  // console.log(sampleNumber)
+  const checkcorrect = (currNumber,correctNumber,currAttempt) =>{
+    if(currNumber === correctNumber){
+      alert("GameOver You win")
+    }
+    else if (currAttempt.attempt === 5 && currNumber !== correctNumber){
+      alert("Sorry U lost the game :( "+
+      "Coreect Sequence is "+correctNumber)
+    }
+  }
 
   const onSelectLetter = (keyval) =>{
     if(currAttempt.letterPos > 4 ) return ;
@@ -39,22 +43,17 @@ function App() {
         currNumber+=board[currAttempt.attempt][i]
     }
     setCurrAttempt({attempt: currAttempt.attempt+1 ,letterPos: 0})
-    if(currNumber === correctNumber){
-      alert("GameOver You win")
-    }
-    else if (currAttempt.attempt === 5 && currNumber !== correctNumber){
-      alert("Sorry U lost the game :( "+
-      "Coreect Sequence is "+correctNumber)
-    }
+    checkcorrect(currNumber,correctNumber,currAttempt)
+    
 
   }
 
   return (
     <div className='App'>
       <nav>
-      <h1> Catch Match</h1>
+      <h1> Numberly</h1>
       </nav>
-      <AppContext.Provider value={ {board
+      <AppContext.Provider value={{board
         ,correctNumber
         ,currAttempt
         ,setBoard
